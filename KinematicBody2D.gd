@@ -24,9 +24,9 @@ func _physics_process(delta):
 		
 	vel = move_and_slide(vel, Vector2(0, -1))
 	
-	if position.x < -360:
+	"""if position.x < -360:
 		position.x = 360
 	
 	if position.x > 385:
-		position.x = -360
+		position.x = -360"""
 	

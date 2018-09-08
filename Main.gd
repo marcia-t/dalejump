@@ -1,6 +1,6 @@
 extends Node
 
 func _ready():
-	$Player.start()
+	#$Player.start()
 	randomize()
 	

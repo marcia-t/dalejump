@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://assets/doodle.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -8,46 +8,39 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="Area2D" index="0"]
 
 position = Vector2( 0.558055, -0.378062 )
-scale = Vector2( 0.1, 0.1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
+
+scale = Vector2( 1, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 2
-mass = 1.0
-friction = 1.0
-bounce = 0.5
-gravity_scale = 7.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index", "collision" ]
 
-[node name="doodle" type="Sprite" parent="." index="0"]
+[node name="doodle" type="Sprite" parent="KinematicBody2D" index="0"]
 
 position = Vector2( 1.12793, 5.38181 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
 
-position = Vector2( -0.321067, 16.3959 )
-scale = Vector2( 1.65594, 0.747846 )
+position = Vector2( -1.41609, 22.9021 )
+scale = Vector2( 1.46941, 0.399678 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Visibility", "Z Index" ]
 
 
