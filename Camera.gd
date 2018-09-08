@@ -10,6 +10,7 @@ func _ready():
 
 func _process(delta):
 	self.position = player.position
+	print(self.position)
 	"""#print(self.position.y)
 	print(player.position.y)
 	if player.position.y < self.position.y:
