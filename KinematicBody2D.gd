@@ -12,7 +12,7 @@ var doodle
 func _ready():
 	doodle = get_node("doodle")
 	screensize = get_viewport_rect().size
-	print (global_position)
+	print(screensize.x)
 
 func _physics_process(delta):
 	
@@ -28,13 +28,12 @@ func _physics_process(delta):
 	vel.y += GRAV
 	if is_on_floor():
 		vel.y = -JUMP ;
-		
-	#vel.x = clamp(vel.x, 0, screensize.x)	
+
 	vel = move_and_slide(vel, Vector2(0, -1))
 	
-	"""if position.x < -360:
-		position.x = 360
+	if position.x < -244:
+		position.x = -244
 	
-	if position.x > 385:
-		position.x = -360"""
+	if position.x > 300:
+		position.x = 300
 	
