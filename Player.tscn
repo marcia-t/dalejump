@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="Area2D" index="0"]
+[node name="Player" type="Area2D"]
 
 position = Vector2( 0.558055, -0.378062 )
 input_pickable = true
@@ -42,5 +42,6 @@ _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 position = Vector2( -1.41609, 22.9021 )
 scale = Vector2( 1.46941, 0.399678 )
 shape = SubResource( 1 )
+one_way_collision = true
 
 

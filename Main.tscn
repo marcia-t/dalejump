@@ -11,8 +11,7 @@ script = ExtResource( 1 )
 
 [node name="Player" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 253.01, 108.949 )
-bounce = 1.0
+position = Vector2( 253.01, 500 )
 
 [node name="Step" parent="." index="1" instance=ExtResource( 3 )]
 
@@ -85,5 +84,9 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Limit" ]
+
+[node name="Step2" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 262.096, 503.622 )
 
 
