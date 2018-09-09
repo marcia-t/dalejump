@@ -88,4 +88,6 @@ player_path = NodePath("../Player")
 
 position = Vector2( 5.68604, 145.514 )
 
+[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
+
 
