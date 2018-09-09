@@ -1,11 +1,45 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Player_parent.gd" type="Script" id=1]
-[ext_resource path="res://KinematicPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/doodle.png" type="Texture" id=2]
 
-[node name="Player" type="Area2D"]
+[sub_resource type="RectangleShape2D" id=1]
 
-position = Vector2( 0.558055, -0.378062 )
+custom_solver_bias = 0.0
+extents = Vector2( 20.5428, 7.15288 )
+
+[node name="Player" type="RigidBody2D" index="0"]
+
+scale = Vector2( 0.5, 0.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 2
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
+
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -13,9 +47,13 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="KinematicBody2D" parent="." index="0" instance=ExtResource( 2 )]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( -2.04955, 16.127 )
+scale = Vector2( 0.895881, 0.699316 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="collision"]
 
 
