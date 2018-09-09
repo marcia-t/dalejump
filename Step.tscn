@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 173, 10 )
 
-[node name="Platform" type="StaticBody2D" groups=[
+[node name="Step" type="StaticBody2D" groups=[
 "Paddles",
 ]]
 
