@@ -5,11 +5,13 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 164.632, 10.164 )
+extents = Vector2( 173, 10 )
 
-[node name="Step" type="StaticBody2D"]
+[node name="Step" type="StaticBody2D" groups=[
+"Paddles",
+]]
 
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.3, 0.3 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -17,20 +19,15 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-_sections_unfolded = [ "Collision", "Transform" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="step" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -0.689255, 1.90247 )
-scale = Vector2( 0.820062, 0.593142 )
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Animation", "Offset" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.961634, -19.9138 )
-scale = Vector2( 0.858803, 0.668504 )
+position = Vector2( -1, -32 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 
