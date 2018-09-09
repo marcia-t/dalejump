@@ -2,7 +2,7 @@ extends RigidBody2D
 var jump_speed = 650
 var speed = 300
 var sprite
-
+signal hit
 
 func _ready():
 	sprite = get_node("Sprite")
@@ -20,8 +20,9 @@ func _physics_process(delta):
 		set_linear_velocity(Vector2(0, get_linear_velocity().y))
 
 
-
+#Acá salto
 func collision(body):
 	if body.is_in_group("Paddles") and get_linear_velocity().y > 0:
 		set_linear_velocity(Vector2(0, -jump_speed)) 
+		emit_signal("hit")
 	pass 
