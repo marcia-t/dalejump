@@ -13,7 +13,7 @@ extents = Vector2( 173, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 18.7876, 7.93047 )
 
-[node name="SpringStep" type="StaticBody2D" index="0" groups=[
+[node name="SpringStep" type="StaticBody2D" groups=[
 "Spring",
 ]]
 

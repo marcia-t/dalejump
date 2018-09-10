@@ -2,6 +2,7 @@ extends Node2D
 
 var step = preload('res://Step.tscn')
 var spring_step = preload('res://SpringStep.tscn')
+var broken_step = preload('res://BrokenStep.tscn')
 var camera 
 var width
 var y = 0
@@ -27,6 +28,8 @@ func _process(delta):
 	var ran = rand_range(0, 1024)
 	if (ran < 50):
 		new_step = spring_step.instance()
+	elif (ran > 49 and ran < 80):
+		new_step = broken_step.instance()
 	else:
 		new_step = step.instance()
 	new_step.position = Vector2(rand_range(-width/2, width/2),y)
