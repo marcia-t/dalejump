@@ -9,6 +9,14 @@ func _ready():
 	set_physics_process(true)
 	pass
 
+
+func start():
+	position = Vector2(360, 400)
+	
+func loose():
+	hide()
+	$Area2D/Collision.disabled=true
+
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		set_linear_velocity(Vector2(-speed, get_linear_velocity().y))

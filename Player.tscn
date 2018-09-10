@@ -30,7 +30,7 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Angular", "Linear", "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -48,7 +48,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="Collision" type="CollisionShape2D" parent="Area2D" index="0"]
 
 position = Vector2( -2.04955, 16.127 )
 scale = Vector2( 0.895881, 0.699316 )
