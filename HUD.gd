@@ -6,11 +6,6 @@ func show_message(text):
 	$MessageLabel.text = text
 	$MessageLabel.show()
 
-func show_game_over():
-	show_message("Game Over")
-	$StartButton.show()
-	$MessageLabel.text = "Jumper"
-	$MessageLabel.show()
 
 func update_score(score):
 	$ScoreLabel.text = str(score)

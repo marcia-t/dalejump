@@ -21,7 +21,7 @@ func _ready():
 
 func _process(delta):
 	#Ver si se puede obtener un nro en base a la distancia al player (salta 153)
-	y -= rand_range(0,155)
+	y -= rand_range(0,140)
 	var new_step = step.instance()
 	new_step.position = Vector2(rand_range(-width/2, width/2),y)
 	add_child(new_step)
@@ -30,17 +30,13 @@ func _process(delta):
 		$Player.loose()
 		$HUD.show_message("Game over")
 		started = false
-		pass
-	pass
-
-#Sumar ptaje
-func _on_Player_hit():
+	#sumar ptaje
 	if started:
-		score+=1
+		camera.start()
+		score = round(max(score, -camera.position.y))
 		$HUD.update_score(score)
 
 
 func _on_HUD_start_game():
 	$Player.start()
 	started = true
-	pass # replace with function body
