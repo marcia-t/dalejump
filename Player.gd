@@ -6,12 +6,16 @@ signal hit
 
 func _ready():
 	sprite = get_node("Sprite")
-	set_physics_process(true)
+	#Para que no se mueva
+	sleeping = true
+	set_physics_process(false)
 	pass
 
 
 func start():
-	position = Vector2(360, 400)
+	set_physics_process(true)
+	sleeping = false
+#	position = Vector2(360, 400)
 	
 func loose():
 	hide()
