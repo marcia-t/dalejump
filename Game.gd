@@ -1,6 +1,8 @@
 extends Node2D
 
 var step = preload('res://Step.tscn')
+var spring_step = preload('res://SpringStep.tscn')
+var broken_step = preload('res://BrokenStep.tscn')
 var camera 
 var width
 var y = 0
@@ -22,7 +24,14 @@ func _ready():
 func _process(delta):
 	#Ver si se puede obtener un nro en base a la distancia al player (salta 153)
 	y -= rand_range(0,140)
-	var new_step = step.instance()
+	var new_step
+	var ran = rand_range(0, 1024)
+	if (ran < 50):
+		new_step = spring_step.instance()
+	elif (ran > 49 and ran < 80):
+		new_step = broken_step.instance()
+	else:
+		new_step = step.instance()
 	new_step.position = Vector2(rand_range(-width/2, width/2),y)
 	add_child(new_step)
 	if (player.position.y > camera.position.y + height/2):

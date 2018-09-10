@@ -34,6 +34,10 @@ func _physics_process(delta):
 
 #Acá salto
 func collision(body):
+	if body.is_in_group("Spring") and get_linear_velocity().y > 0:
+		set_linear_velocity(Vector2(0, -jump_speed*2)) 
 	if body.is_in_group("Paddles") and get_linear_velocity().y > 0:
 		set_linear_velocity(Vector2(0, -jump_speed)) 
+	if body.is_in_group("Broken"):
+		body.hide()
 	pass 

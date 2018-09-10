@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 20.5428, 7.15288 )
 
-[node name="Player" type="RigidBody2D" index="0"]
+[node name="Player" type="RigidBody2D"]
 
 scale = Vector2( 0.5, 0.5 )
 input_pickable = false
