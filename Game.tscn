@@ -29,15 +29,9 @@ scroll_base_scale = Vector2( 1, 1 )
 scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = false
+_sections_unfolded = [ "Scroll" ]
 
-[node name="Parallax" type="ParallaxLayer" parent="Background" index="0"]
-
-motion_scale = Vector2( 1, 1 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 560, 800 )
-_sections_unfolded = [ "Motion" ]
-
-[node name="Texture" type="TextureRect" parent="Background/Parallax" index="0"]
+[node name="Texture" type="TextureRect" parent="Background" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -45,8 +39,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -455.0
 margin_top = -661.0
-margin_right = 1428.0
-margin_bottom = 1994.0
+margin_right = 1655.0
+margin_bottom = 2292.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
